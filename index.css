@@ -8,7 +8,44 @@
 html{
   scroll-behavior: smooth;
 }
+.container.night-effect{
+  background-color: #0F172A;
+}
+.section-title.night-effect{
+  color: #F8F9FA;
+}
+.image-box.night-effect{
+  background-color: #1B2335;
+}
+.image-box.no-shadow{
+  box-shadow: none;
+}
+p.night-effect{
+  color: #fff;
+}
+.navbar-list.night-effect{
+  background-color: #0F172A;
+}
+.navbar-links a.night-effect{
+  color: #fff;
+}
+.upper-part span i.ri-sun-line{
+  background-color:#3F4555; 
+  color: #fff;
+}
+.upper-part span i.ri-sun-line:hover{
+  background-color:#3F4555; 
+  color: #fff;
+}
+
+body{
+  background-color: #F8F9FA;
+}
 .navbar-list{
+  position: sticky;
+  width: 100vw;
+  top: 0;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   background-color: #F8F7FF;
@@ -18,7 +55,7 @@ html{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 35px;
+  padding: 10px 35px;
 }
 .upper-part img{
   width: 50px;
@@ -45,6 +82,7 @@ html{
   border: none;
   border-bottom: 1px solid #cdcdcd;
 }
+
 .navbar-links {
   display: flex;
   list-style: none;
@@ -54,10 +92,7 @@ html{
   padding: 15px 0;
 
 }
-.navbar-links li a.active{
-      color: #fff;
-    background-color: black;
-}
+
 .navbar-links li a{
   text-decoration: none;
   color:#212529;
@@ -72,22 +107,27 @@ html{
     background-color: black;
 }
 
-#Soups{
+section{
   margin-top: 3rem;
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+.section-title{
+  color: #212529;
+  font-size: 28px;
+}
 .image-boxs-container{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(2,1fr);
+  grid-template-rows: repeat(auto,1fr);
   gap: 2.5rem;
   
 }
 .image-box{
   width: 100%;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -95,15 +135,15 @@ html{
   border-radius: 20px;
   cursor: pointer;
   transition: transform .4s;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.image-box p:nth-child(2){
+.food-name{
   color: #3F4346;
   font-weight: 500;
   font-size: 16px;
 
 }
-.image-box p:nth-child(3){
+.food-price{
   color: #000000;
   font-weight: 700;
   font-size: 18px;
