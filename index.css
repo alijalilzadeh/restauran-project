@@ -56,7 +56,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .navbar-list {
@@ -132,7 +132,7 @@ body {
 }
 
 section {
-  margin-top: 3rem;
+  margin-top: 1rem;
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
@@ -142,6 +142,7 @@ section {
 .section-title {
   color: #212529;
   font-size: 34px;
+  text-align: center;
 }
 
 .image-boxs-container {
@@ -186,6 +187,7 @@ section {
   object-fit: cover;
   overflow: hidden;
   background-size: cover;
+  background-position: center;
 }
 
 .image-box p {
@@ -247,57 +249,64 @@ section {
 }
 
 @media (max-width: 1024px) {
-  .section-title{
+  .section-title {
     font-size: 30px;
   }
-  section{
+
+  section {
     padding: 0 2rem;
   }
 }
 
-/* Mobile devices (600px and down) */
 @media (max-width: 768px) {
-  .upper-part{
+  .upper-part {
     padding: 10px 20px;
   }
-  .upper-part img{
+
+  .upper-part img {
     width: 40px;
   }
-  .upper-part span i{
+
+  .upper-part span i {
     font-size: 14px;
     width: 25px;
     height: 25px;
     padding: 15px;
   }
-  .navbar-links{
+
+  .navbar-links {
     gap: 1rem;
     padding: 10px 0;
   }
-  .navbar-links li a{
+
+  .navbar-links li a {
     font-size: 14px;
     padding: 6px 8px;
   }
-  section{
+
+  section {
     padding: 0 1.5rem;
     margin-top: 2rem;
   }
-  .section-title{
+
+  .section-title {
     font-size: 26px;
   }
-  .image-boxs-container{
-    grid-template-columns: repeat(2,1fr); /* This makes the grid stack into a single column on mobile */
+
+  .image-boxs-container {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  .food-name{
+
+  .food-name {
     font-size: 15px;
   }
-  .food-price{
+
+  .food-price {
     font-size: 17px;
   }
-  .image-box:hover{
-    transform: none; /* Disabling the hover effect for better mobile usability */
-  }
-  .arrow-up a{
+
+  .arrow-up a {
     bottom: 20px;
     right: 20px;
     width: 45px;
@@ -311,37 +320,55 @@ section {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .upper-part{
+
+  .image-box:hover {
+    transform: translateY(-3px);
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .upper-part {
     display: flex;
     gap: 1rem;
     padding: 15px 35px;
   }
-  .upper-part span{
-    align-self: flex-end; 
+
+  .upper-part span {
+    align-self: flex-end;
   }
-  section{
+
+  section {
     padding: 0 1rem;
   }
-  .section-title{
+
+  .section-title {
     font-size: 22px;
   }
+
   .image-box {
     width: 115px;
     gap: 0;
   }
-  .image-box img{
+
+  .image-box img {
     height: 110px;
     width: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+
   }
-  .food-name{
+
+  .food-name {
     font-size: 12px;
     display: flex;
     margin: 0 auto;
     text-align: center;
     align-items: center;
   }
-  .food-price{
+
+  .food-price {
     font-size: 14px;
     text-align: center;
   }
