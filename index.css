@@ -353,12 +353,13 @@ section {
   }
 
   .image-box {
-    width: 100%;
+    width: 120px;
+    height: auto;
     gap: 0;
   }
 
   .image-box img {
-    height: 90px;
+    height:100px;
     width: 100%;
     object-fit: cover;
     background-size: cover;
