@@ -370,6 +370,7 @@ section:not(#Contact) {
 }
 
 @media (max-width: 576px) {
+  
   .image-boxs-container {
     display: grid;
     grid-template-columns:  repeat(2,1fr);
