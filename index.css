@@ -248,7 +248,6 @@ section {
   transform: translateY(-6px);
 }
 
-/* Bu stil 1024px-dən kiçik bütün ekranlara tətbiq olunur */
 @media (max-width: 1024px) {
   .section-title {
     font-size: 30px;
@@ -259,7 +258,6 @@ section {
   }
 }
 
-/* Bu stil 768px-dən kiçik bütün ekranlara tətbiq olunur (tablet və telefonlar üçün) */
 @media (max-width: 768px) {
   .upper-part {
     padding: 10px 20px;
@@ -328,10 +326,10 @@ section {
 }
 
 
-@media (max-width: 440px) {
+@media (max-width: 576px) {
   .image-boxs-container {
     display: grid;
-    grid-template-columns:  1fr;
+    grid-template-columns:  repeat(2,1fr);
     gap: 1.5rem;
   }
   .upper-part {
