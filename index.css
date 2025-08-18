@@ -248,6 +248,7 @@ section {
   transform: translateY(-6px);
 }
 
+/* Bu stil 1024px-dən kiçik bütün ekranlara tətbiq olunur */
 @media (max-width: 1024px) {
   .section-title {
     font-size: 30px;
@@ -258,6 +259,7 @@ section {
   }
 }
 
+/* Bu stil 768px-dən kiçik bütün ekranlara tətbiq olunur (tablet və telefonlar üçün) */
 @media (max-width: 768px) {
   .upper-part {
     padding: 10px 20px;
@@ -277,6 +279,8 @@ section {
   .navbar-links {
     gap: 1rem;
     padding: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .navbar-links li a {
@@ -291,6 +295,7 @@ section {
 
   .section-title {
     font-size: 26px;
+    text-align: center;
   }
 
   .image-boxs-container {
@@ -301,10 +306,12 @@ section {
 
   .food-name {
     font-size: 15px;
+    text-align: center;
   }
 
   .food-price {
     font-size: 17px;
+    text-align: center;
   }
 
   .arrow-up a {
@@ -314,30 +321,18 @@ section {
     height: 45px;
     font-size: 20px;
   }
-}
-
-@media (max-width: 480px) {
-   .image-boxs-container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-  }
-  .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
   .image-box:hover {
     transform: translateY(-3px);
   }
+}
 
-  .section-title {
-    text-align: center;
-  }
-
+/* Bu stil 440px-dən kiçik bütün ekranlara tətbiq olunur (kiçik telefonlar üçün) */
+@media (max-width: 440px) {
   .upper-part {
-    display: flex;
     gap: 1rem;
     padding: 15px 35px;
+    justify-content: space-between;
   }
 
   .upper-part span {
@@ -351,31 +346,25 @@ section {
   .section-title {
     font-size: 22px;
   }
-
+  
   .image-box {
-    width: 200px;
-    height: auto;
-    gap: 0;
+    width: 100%;
   }
 
   .image-box img {
-    height:100px;
+    height: 100px;
     width: 100%;
     object-fit: cover;
-    background-size: cover;
-    background-position: center;
   }
 
   .food-name {
     font-size: 13px;
     display: flex;
     margin: 0 auto;
-    text-align: center;
     align-items: center;
   }
 
   .food-price {
     font-size: 14px;
-    text-align: center;
   }
 }
