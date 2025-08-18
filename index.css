@@ -327,8 +327,13 @@ section {
   }
 }
 
-/* Bu stil 440px-dən kiçik bütün ekranlara tətbiq olunur (kiçik telefonlar üçün) */
+
 @media (max-width: 440px) {
+  .image-boxs-container {
+    display: grid;
+    grid-template-columns:  1fr;
+    gap: 1.5rem;
+  }
   .upper-part {
     gap: 1rem;
     padding: 15px 35px;
@@ -352,19 +357,19 @@ section {
   }
 
   .image-box img {
-    height: 100px;
+    height: auto;
     width: 100%;
     object-fit: cover;
   }
 
   .food-name {
-    font-size: 13px;
+    font-size: 15px;
     display: flex;
     margin: 0 auto;
     align-items: center;
   }
 
   .food-price {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
