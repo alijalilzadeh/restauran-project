@@ -4,6 +4,7 @@ const pElements = document.querySelectorAll("p");
 const navbarList = document.querySelector(".navbar-list");
 const aLinks = document.querySelectorAll(".navbar-link a");
 const container = document.querySelector(".container");
+const hElements = document.querySelectorAll(".section-title");
 let isDark = true;
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {
@@ -17,6 +18,9 @@ moonIcon.addEventListener("click", () => {
   aLinks.forEach(aLink => {
     aLink.classList.toggle("night-effect");
 
+  })
+    hElements.forEach(hElement => {
+    hElement.classList.toggle("night-effect");
   })
   container.classList.toggle("night-effect");
   navbarList.classList.toggle("night-effect");
