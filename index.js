@@ -7,20 +7,25 @@ const container = document.querySelector(".container");
 const hElements = document.querySelectorAll(".section-title");
 const navbarLinks = document.querySelector(".navbar-links");
 const hamburgerIcon = document.querySelector(".fa-bars");
+ const downPart = document.querySelector(".down-part");
 let isDark = true;
 let isOpen = false;
 hamburgerIcon.addEventListener("click", () => {
-  navbarLinks.classList.toggle("open");
   const isOpenCheck = isOpen ? "none" : "flex";
   navbarLinks.style.display = isOpenCheck;
-  isOpen = !isOpen;
-    if (isOpen) {
-   
+   if (window.innerWidth <= 576) {
+    if (!isOpen) {
+    downPart.classList.remove("close");
+    downPart.classList.add("open");
     hamburgerIcon.className = "fa-solid fa-xmark";
   } else {
+    downPart.classList.remove("open");
+    downPart.classList.add("close");
     hamburgerIcon.className = "fa-solid fa-bars";
       
   }
+  isOpen = !isOpen;
+   }
 })
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {

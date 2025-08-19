@@ -38,14 +38,17 @@ p.night-effect {
 .navbar-links a.night-effect {
   color: #fff;
 }
-.upper-part span .fa-bars.night-effect{
+
+.upper-part span .fa-bars.night-effect {
   background-color: #3F4555;
   color: #fff;
 }
-.upper-part span .fa-xmark.night-effect{
+
+.upper-part span .fa-xmark.night-effect {
   background-color: #3F4555;
   color: #fff;
 }
+
 .upper-part span i.ri-sun-line {
   background-color: #3F4555;
   color: #fff;
@@ -130,7 +133,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 15px 0;
-  transition: all .4s ;
+  transition: all .4s;
 }
 
 .navbar-links li a {
@@ -404,22 +407,41 @@ section:not(#Contact) {
 
 
 @media (max-width: 576px) {
-  .navbar-links{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  .down-part {
     max-height: 0;
-    transition: all .4s;
-    top:0;
+    overflow: hidden;
+    border-radius: 20px;
+
   }
-  .navbar-links.open{
-    max-height: 100%;
-    top: 200px;
+
+  .down-part.open {
+    animation: openNavbar 2.5s both;
+    border-radius: 20px;
   }
-  .upper-part span .fa-bars{
+  @keyframes openNavbar {
+    0% {
+      max-height: 0;
+    }
+
+    50% {
+      max-height: 200px;
+    }
+
+    100% {
+      max-height: 400px;
+    }
+  }
+
+  .navbar-links {
+    display: none;
+    align-items: center;
+
+  }
+
+  .upper-part span .fa-bars {
     display: flex;
   }
+
   section:not(#Contact) {
     padding: 0 .6rem !important;
   }
