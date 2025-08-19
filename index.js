@@ -7,25 +7,24 @@ const container = document.querySelector(".container");
 const hElements = document.querySelectorAll(".section-title");
 const navbarLinks = document.querySelector(".navbar-links");
 const hamburgerIcon = document.querySelector(".fa-bars");
- const downPart = document.querySelector(".down-part");
+const downPart = document.querySelector(".down-part");
 let isDark = true;
 let isOpen = false;
 hamburgerIcon.addEventListener("click", () => {
   const isOpenCheck = isOpen ? "none" : "flex";
   navbarLinks.style.display = isOpenCheck;
-   if (window.innerWidth <= 576) {
+  if (window.innerWidth <= 576) {
     if (!isOpen) {
-    downPart.classList.remove("close");
-    downPart.classList.add("open");
-    hamburgerIcon.className = "fa-solid fa-xmark";
-  } else {
-    downPart.classList.remove("open");
-    downPart.classList.add("close");
-    hamburgerIcon.className = "fa-solid fa-bars";
-      
+      downPart.classList.remove("close");
+      downPart.classList.add("open");
+      hamburgerIcon.className = "fa-solid fa-xmark";
+    } else {
+      downPart.classList.remove("open");
+      downPart.classList.add("close");
+      hamburgerIcon.className = "fa-solid fa-bars";
+    }
+    isOpen = !isOpen;
   }
-  isOpen = !isOpen;
-   }
 })
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {
@@ -38,8 +37,6 @@ moonIcon.addEventListener("click", () => {
   })
   aLinks.forEach(aLink => {
     aLink.classList.toggle("night-effect");
-    
-
   })
   hElements.forEach(hElement => {
     hElement.classList.toggle("night-effect");
