@@ -245,18 +245,67 @@ section:not(#Contact) {
 .image-box:hover {
   transform: translateY(-6px);
 }
-.restauran-footer-logo{
+
+.restauran-footer-logo {
   display: flex;
   align-items: flex-end;
-  gap:.7rem;
+  gap: .7rem;
 }
 
-.restauran-footer-logo img{
-   width: 50px;
+.restauran-footer-logo img {
+  width: 50px;
   cursor: pointer;
   border-radius: 50%;
   align-items: center;
   display: flex;
+}
+
+.contact-links {
+  display: flex;
+}
+
+#Contact {
+  padding: 0;
+  width: 100%;
+}
+
+.contact-part {
+  background-color: #000;
+  padding: 40px 0;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-part h2 {
+  color: #fff;
+  font-size: 35px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.contact-links i {
+  margin-right: 5px;
+    width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #000;
+  padding: 5px;
+  background-color: #fff;
+  transition: .4s;
+}
+.contact-links i:hover{
+  background-color: #000;
+  color: #fff;
 }
 
 @media (max-width: 1024px) {
@@ -333,47 +382,19 @@ section:not(#Contact) {
     transform: translateY(-3px);
   }
 }
-#Contact{
-  padding: 0;
-  width: 100%;
-}
-.contact-part{
-  background-color: #000;
-  padding:40px 0; 
-  display: flex;
-  gap: 1.2rem;
-  flex-direction: column;
-  align-items: center;
-}
 
-.contact-part h2{
-  color: #fff;
-  font-size: 35px;
-}
-.contact-links{
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-}
-.contact-links a{
-  text-decoration: none;
-  color: #fff;
-
-}
-.contact-links i{
-  margin-right: 5px;
-}
 
 @media (max-width: 576px) {
-    section {
+  section {
     padding: 0 .6rem !important;
   }
-  
+
   .image-boxs-container {
     display: grid;
-    grid-template-columns:  repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
   .upper-part {
     gap: 1rem;
     padding: 15px 35px;
@@ -384,13 +405,14 @@ section:not(#Contact) {
     align-self: flex-end;
   }
 
-  .image-boxs-container{
+  .image-boxs-container {
     padding-left: 0;
   }
+
   .section-title {
     font-size: 22px;
   }
-  
+
   .image-box {
     width: 100%;
     height: 100%
@@ -416,13 +438,16 @@ section:not(#Contact) {
     font-size: 17px;
     margin: 0 auto;
   }
-  .restauran-footer-logo h2{
+
+  .restauran-footer-logo h2 {
     font-size: 26px;
   }
-  .restauran-footer-logo img{
+
+  .restauran-footer-logo img {
     width: 40px;
   }
-  .contact-links a{
+
+  .contact-links a {
     font-size: 13px;
   }
 }
