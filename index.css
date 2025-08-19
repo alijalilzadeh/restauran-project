@@ -285,6 +285,7 @@ section:not(#Contact) {
 
 .contact-links {
   display: flex;
+  flex-direction: column;
   gap: 1.2rem;
 }
 
@@ -295,7 +296,7 @@ section:not(#Contact) {
 
 .contact-links i {
   margin-right: 5px;
-    width: 60px;
+  width: 60px;
   height: 60px;
   border-radius: 50%;
   color: #000;
@@ -385,7 +386,7 @@ section:not(#Contact) {
 
 
 @media (max-width: 576px) {
-  section {
+  section:not(#Contact) {
     padding: 0 .6rem !important;
   }
 
