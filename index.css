@@ -38,7 +38,14 @@ p.night-effect {
 .navbar-links a.night-effect {
   color: #fff;
 }
-
+.upper-part span .fa-bars.night-effect{
+  background-color: #3F4555;
+  color: #fff;
+}
+.upper-part span .fa-xmark.night-effect{
+  background-color: #3F4555;
+  color: #fff;
+}
 .upper-part span i.ri-sun-line {
   background-color: #3F4555;
   color: #fff;
@@ -48,6 +55,7 @@ p.night-effect {
   background-color: #3F4555;
   color: #fff;
 }
+
 
 body {
   background-color: #F8F9FA;
@@ -75,6 +83,15 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 35px;
+}
+
+.upper-part span {
+  display: flex;
+  gap: .8rem;
+}
+
+.upper-part span .fa-bars {
+  display: none;
 }
 
 .upper-part img {
@@ -113,7 +130,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 15px 0;
-
+  transition: all .4s ;
 }
 
 .navbar-links li a {
@@ -304,7 +321,8 @@ section:not(#Contact) {
   background-color: #fff;
   transition: .4s;
 }
-.contact-links i:hover{
+
+.contact-links i:hover {
   background-color: #000;
   color: #fff;
 }
@@ -386,8 +404,28 @@ section:not(#Contact) {
 
 
 @media (max-width: 576px) {
+  .navbar-links{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .4s;
+    top:0;
+  }
+  .navbar-links.open{
+    max-height: 100%;
+    top: 200px;
+  }
+  .upper-part span .fa-bars{
+    display: flex;
+  }
   section:not(#Contact) {
     padding: 0 .6rem !important;
+  }
+
+  .navbar-links a {
+    font-size: 151px;
   }
 
   .image-boxs-container {
