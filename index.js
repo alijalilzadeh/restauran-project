@@ -10,9 +10,11 @@ const hamburgerIcon = document.querySelector(".fa-bars");
 const downPart = document.querySelector(".down-part");
 let isDark = true;
 let isOpen = false;
+
 hamburgerIcon.addEventListener("click", () => {
   const isOpenCheck = isOpen ? "none" : "flex";
   navbarLinks.style.display = isOpenCheck;
+  
   if (window.innerWidth <= 576) {
     if (!isOpen) {
       downPart.classList.remove("close");
@@ -26,21 +28,26 @@ hamburgerIcon.addEventListener("click", () => {
     isOpen = !isOpen;
   }
 })
+
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {
     box.classList.toggle("night-effect");
     box.classList.toggle("no-shadow");
 
   });
+
   pElements.forEach(pElement => {
     pElement.classList.toggle("night-effect");
   })
+
   aLinks.forEach(aLink => {
     aLink.classList.toggle("night-effect");
   })
+
   hElements.forEach(hElement => {
     hElement.classList.toggle("night-effect");
   })
+
   container.classList.toggle("night-effect");
   navbarList.classList.toggle("night-effect");
   hamburgerIcon.classList.toggle("night-effect");

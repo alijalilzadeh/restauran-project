@@ -10,6 +10,32 @@
 html {
   scroll-behavior: smooth;
 }
+.img-logo{
+  display: flex;
+  gap: .8rem;
+}
+.img-logo a{
+  text-decoration: none;
+  color: #494a4b;
+}
+
+.upper-part span i,.img-logo i {
+  background-color: #F2F3F4;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 20px !important;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 15px;
+  transition: background-color .4s ease;
+}
+
+.upper-part span i:hover,.img-logo i:hover {
+  background-color: #DFE0E1;
+}
 
 *.night-effect {
   transition: all .45s;
@@ -106,23 +132,18 @@ body {
   cursor: pointer;
   border-radius: 50%;
 }
-
-.upper-part span i {
-  background-color: #F2F3F4;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  padding: 20px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
+.restauran-footer-logo {
   display: flex;
-  font-size: 15px;
-  transition: background-color .4s ease;
+  align-items: flex-end;
+  gap: .7rem;
 }
 
-.upper-part span i:hover {
-  background-color: #DFE0E1;
+.restauran-footer-logo img {
+  width: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
 }
 
 .seperating-line {
@@ -197,12 +218,10 @@ section:not(#Contact) {
   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px !important;
 }
 
-
 .food-name {
   color: #3F4346;
   font-weight: 500;
   font-size: 16px;
-
 }
 
 .food-price {
@@ -221,7 +240,6 @@ section:not(#Contact) {
 .image-box p {
   padding: 15px 22px;
 }
-
 
 .arrow-up a {
   position: fixed;
@@ -274,20 +292,6 @@ section:not(#Contact) {
   transform: translateY(-6px);
 }
 
-.restauran-footer-logo {
-  display: flex;
-  align-items: flex-end;
-  gap: .7rem;
-}
-
-.restauran-footer-logo img {
-  width: 50px;
-  cursor: pointer;
-  border-radius: 50%;
-  align-items: center;
-  display: flex;
-}
-
 .contact-links {
   display: flex;
 }
@@ -322,6 +326,7 @@ section:not(#Contact) {
   color: #fff;
   transition: all .4s;
 }
+
 .contact-links a:hover {
   transform: translateY(-3px);
 }
@@ -417,13 +422,11 @@ section:not(#Contact) {
   }
 }
 
-
 @media (max-width: 576px) {
   .down-part {
     max-height: 0;
     overflow: hidden;
     border-radius: 20px;
-
   }
 
   .down-part.open {
