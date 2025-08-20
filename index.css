@@ -178,7 +178,7 @@ body{
 
   }
 }
-@media (max-width:400px){
+@media (max-width:576px){
   .logo-name img{
     width: 80px;
   }
