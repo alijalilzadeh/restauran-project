@@ -10,7 +10,8 @@
 html {
   scroll-behavior: smooth;
 }
-*.night-effect{
+
+*.night-effect {
   transition: all .45s;
 }
 
@@ -143,6 +144,7 @@ body {
   text-decoration: none;
   color: #212529;
   cursor: pointer;
+  white-space: nowrap;
   font-weight: 500;
   border-radius: 25px;
   padding: 8px 10px;
@@ -186,9 +188,15 @@ section:not(#Contact) {
   border-radius: 20px;
   gap: 0.6rem !important;
   cursor: pointer;
-  transition: transform .4s;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: all .4s;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px !important;
 }
+
+.image-box:hover {
+  transform: translateY(-6px);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px !important;
+}
+
 
 .food-name {
   color: #3F4346;
@@ -214,9 +222,6 @@ section:not(#Contact) {
   padding: 15px 22px;
 }
 
-.image-box:hover {
-  transform: translateY(-6px);
-}
 
 .arrow-up a {
   position: fixed;
@@ -293,7 +298,7 @@ section:not(#Contact) {
 }
 
 .contact-part {
-  background-color: #000;
+  background-color: #042A2B;
   padding: 40px 0;
   display: flex;
   gap: 2rem;
@@ -315,6 +320,10 @@ section:not(#Contact) {
 .contact-links a {
   text-decoration: none;
   color: #fff;
+  transition: all .4s;
+}
+.contact-links a:hover {
+  transform: translateY(-3px);
 }
 
 .contact-links i {
@@ -421,6 +430,7 @@ section:not(#Contact) {
     animation: openNavbar 2.5s both;
     border-radius: 20px;
   }
+
   @keyframes openNavbar {
     0% {
       max-height: 0;

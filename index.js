@@ -47,7 +47,6 @@ moonIcon.addEventListener("click", () => {
   const changingTema = isDark ? "ri-sun-line" : "fa-solid fa-moon";
   moonIcon.className = changingTema;
   isDark = !isDark;
-
 });
 
 
