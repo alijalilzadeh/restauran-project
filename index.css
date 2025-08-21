@@ -114,6 +114,7 @@ body{
 }
 .contact-us{
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 1.7rem;
   width: 50%;
@@ -168,6 +169,37 @@ body{
 .location-details a{
   text-decoration: none;
   color: #333;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.fa-copy{
+  cursor: pointer;
+}
+.copy-info{
+  font-size: 14px;
+  align-items: center;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgb(207, 199, 199);
+  width: 100px;
+  border-radius: 14px;
+  position: absolute;
+  background-color: #fff;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 5px 0;
+  display: none;
+  color: #004F2D;
+}
+.fa-check{
+  color: #004F2D;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
 }
 @keyframes enterMenu{
   0%{
@@ -210,9 +242,7 @@ body{
   }
   .phone-details,.location-details{
     display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
   }
   .contact-links a{
     font-size: 15px;
@@ -222,6 +252,6 @@ body{
     width: 100%;
   }
   .enter-menu-box,.contact-us{
-    width: 80%;
+    width: 88%;
   }
 }
