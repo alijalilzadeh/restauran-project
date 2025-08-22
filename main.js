@@ -8,6 +8,7 @@ const hElements = document.querySelectorAll(".section-title");
 const navbarLinks = document.querySelector(".navbar-links");
 const hamburgerIcon = document.querySelector(".fa-bars");
 const downPart = document.querySelector(".down-part");
+const arrowLeft = document.querySelector(".fa-arrow-left");
 let isDark = true;
 let isOpen = false;
 
@@ -47,7 +48,7 @@ moonIcon.addEventListener("click", () => {
   hElements.forEach(hElement => {
     hElement.classList.toggle("night-effect");
   })
-
+  arrowLeft.classList.toggle("night-effect");
   container.classList.toggle("night-effect");
   navbarList.classList.toggle("night-effect");
   hamburgerIcon.classList.toggle("night-effect");

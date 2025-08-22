@@ -13,6 +13,8 @@ html {
 .img-logo{
   display: flex;
   gap: .8rem;
+  align-items: center;
+  justify-content: center;
 }
 .img-logo a{
   text-decoration: none;
@@ -68,7 +70,10 @@ p.night-effect {
 .navbar-links a.night-effect {
   color: #fff;
 }
-
+.upper-part .img-logo .fa-arrow-left.night-effect{
+  background-color: #3F4555;
+  color: #fff;
+}
 .upper-part span .fa-bars.night-effect {
   background-color: #3F4555;
   color: #fff;
@@ -114,7 +119,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 35px;
+  padding: 15px 35px;
 }
 
 .upper-part span {
@@ -205,7 +210,7 @@ section:not(#Contact) {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 30px;
   gap: 0.6rem !important;
   cursor: pointer;
   transition: all .4s;
