@@ -9,7 +9,14 @@ const navbarLinks = document.querySelector(".navbar-links");
 const downPart = document.querySelector(".down-part");
 const arrowLeft = document.querySelector(".fa-arrow-left");
 let isDark = true;
-
+window.addEventListener("scroll",()=>{
+  if(window.scrollY > 50){
+    downPart.classList.add("fixed");
+  }
+  else{
+    downPart.classList.remove("fixed");
+  }
+})
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {
     box.classList.toggle("night-effect");

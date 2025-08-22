@@ -173,7 +173,15 @@ body {
   padding: 15px 0;
   transition: all .4s;
 }
-
+.down-part.fixed{
+  position: fixed;
+  z-index: 1000;
+  border-radius: 0px !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #F8F7FF;
+}
 .navbar-links li a {
   text-decoration: none;
   color: #212529;
@@ -388,7 +396,6 @@ section:not(#Contact) {
 
   .down-part {
     overflow-x: auto;
-    /* sağa-sola sürüşmə */
     -webkit-overflow-scrolling: touch;
   }
 
@@ -463,7 +470,7 @@ section {
   }
 
   .navbar-links a {
-    font-size: 151px;
+    font-size: 13px !important;
   }
 
   .image-boxs-container {
