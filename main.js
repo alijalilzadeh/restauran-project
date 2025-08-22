@@ -38,9 +38,7 @@ moonIcon.addEventListener("click", () => {
   arrowLeft.classList.toggle("night-effect");
   container.classList.toggle("night-effect");
   navbarList.classList.toggle("night-effect");
-  hamburgerIcon.classList.toggle("night-effect");
   const changingTema = isDark ? "ri-sun-line" : "fa-solid fa-moon";
   moonIcon.className = changingTema;
   isDark = !isDark;
 });
-
