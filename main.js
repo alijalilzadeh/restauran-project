@@ -6,29 +6,9 @@ const aLinks = document.querySelectorAll(".navbar-link a");
 const container = document.querySelector(".container");
 const hElements = document.querySelectorAll(".section-title");
 const navbarLinks = document.querySelector(".navbar-links");
-const hamburgerIcon = document.querySelector(".fa-bars");
 const downPart = document.querySelector(".down-part");
 const arrowLeft = document.querySelector(".fa-arrow-left");
 let isDark = true;
-let isOpen = false;
-
-hamburgerIcon.addEventListener("click", () => {
-  const isOpenCheck = isOpen ? "none" : "flex";
-  navbarLinks.style.display = isOpenCheck;
-  
-  if (window.innerWidth <= 576) {
-    if (!isOpen) {
-      downPart.classList.remove("close");
-      downPart.classList.add("open");
-      hamburgerIcon.className = "fa-solid fa-xmark";
-    } else {
-      downPart.classList.remove("open");
-      downPart.classList.add("close");
-      hamburgerIcon.className = "fa-solid fa-bars";
-    }
-    isOpen = !isOpen;
-  }
-})
 
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {
@@ -56,5 +36,4 @@ moonIcon.addEventListener("click", () => {
   moonIcon.className = changingTema;
   isDark = !isDark;
 });
-
 
