@@ -6,20 +6,24 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body{
+
+body {
   background-color: #F8F9FA;
   height: 100vh;
 }
-.wrapper{
+
+.wrapper {
   display: flex;
   flex-direction: column;
 }
-.main-part{
-    display: flex;
+
+.main-part {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-.header-part img{
+
+.header-part img {
   width: 100%;
   border-radius: 0px 0px 30% 30%;
   height: 200px;
@@ -28,91 +32,167 @@ body{
   background-size: cover;
 }
 
-.logo-name{
+.logo-name {
   display: flex;
   flex-direction: column;
   align-items: center;
   transform: translateY(-60px);
   gap: .7rem;
 }
-.logo-name img{
+
+.logo-name img {
   width: 120px;
   border: 3px solid #333;
   border-radius: 50%;
 }
-.logo-name h2{
+
+.logo-name h2 {
   color: #212529;
   font-size: 25px;
 }
-.look-menu + a{
+
+.look-menu+a {
   text-decoration: none;
   display: flex;
   align-items: center;
 }
-.look-menu{
+
+.look-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-.enter-menu{
+
+.enter-menu {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.enter-menu-box{
+
+.enter-menu-box {
   animation: enterMenu 2.2s forwards infinite;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
   width: 50%;
   background-color: #000;
-  padding: 20px ;
+  padding: 20px;
   border-radius: 20px;
   cursor: pointer;
 }
-.look-menu h3{
+
+.look-menu h3 {
   color: #fff;
   font-size: 18px;
   font-weight: 500;
 }
-.look-menu ~ div{
+
+.look-menu~div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.look-menu p{
+.look-menu p {
   color: #A2A2A2;
   font-size: 12px;
   font-weight: 500;
 }
-.ri-arrow-right-s-line{
+
+.ri-arrow-right-s-line {
   color: #A2A2A2;
   font-weight: 600;
   font-size: 20px;
 
 }
-.enter-menu-box .ri-book-open-line{
+
+.enter-menu-box .ri-book-open-line {
   background-color: #383838;
-   color: #dedbdb;
-   width: 40px;
-   height: 40px;
-   border-radius: 10px;
-   padding: 10px !important;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  color: #dedbdb;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 10px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.contact-us-box{
+
+.working-hours-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.working-hours-box p {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.working-hours-box span {
+  font-size: 18px;
+}
+
+.working-hours-box p,
+.working-hours-box span {
+  font-weight: 500;
+
+}
+
+.hour-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hour-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.status {
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+  justify-content: center;
+}
+p.day-status{
+  font-size: 13px !important;
+  color: #333;
+}
+.circle.open{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #249c14;
+}
+.circle.close{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #D10000;
+}
+
+.contact-us-box,
+.working-hours-content {
   width: 100%;
   margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.contact-us{
+
+.contact-us,
+.working-hours-box {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -121,36 +201,42 @@ body{
   border-radius: 15px;
   padding: 20px;
   background-color: #fff;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px !important;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px !important;
 }
-.contact-info{
+
+.contact-info {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
-.contact-info h2{
+
+.contact-info h2 {
   color: #212529;
   font-size: 18px;
 }
-.phone-details,.location-details{
+
+.phone-details,
+.location-details {
   display: flex;
   color: #100f0f;
   justify-content: space-between;
   font-size: 15px;
 }
-.social-networks{
+
+.social-networks {
   display: flex;
   flex-direction: column;
   gap: .7rem;
 }
-.contact-links{
+
+.contact-links {
   display: flex;
   gap: 1rem;
-   align-items: center;
+  align-items: center;
   justify-content: center;
 }
 
-.contact-links a{
+.contact-links a {
   font-size: 18px;
   text-decoration: none;
   padding: 12px;
@@ -161,22 +247,26 @@ body{
   align-items: center;
   transition: all .4s;
 }
-.contact-links a:hover{
-    color: #fff;
-    background-color: #000;
-    transform: translateY(-3px);
+
+.contact-links a:hover {
+  color: #fff;
+  background-color: #000;
+  transform: translateY(-3px);
 }
-.location-details a{
+
+.location-details a {
   text-decoration: none;
   color: #333;
   display: flex;
   align-items: center;
   gap: .4rem;
 }
-.fa-copy{
+
+.fa-copy {
   cursor: pointer;
 }
-.copy-info{
+
+.copy-info {
   font-size: 14px;
   align-items: center;
   font-weight: 500;
@@ -190,68 +280,87 @@ body{
   z-index: 100;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   padding: 5px 0;
   display: none;
   color: #004F2D;
 }
-.fa-check{
+
+.fa-check {
   color: #004F2D;
   font-size: 13px;
   display: flex;
   align-items: center;
 }
-@keyframes enterMenu{
-  0%{
-      transform: scale(1.04);
+
+@keyframes enterMenu {
+  0% {
+    transform: scale(1.04);
   }
-  50%{
-      transform: scale(1.10);
+
+  50% {
+    transform: scale(1.10);
 
   }
-  100%{
-      transform: scale(1.04);
+
+  100% {
+    transform: scale(1.04);
 
   }
 }
-@media (max-width:576px){
-  .logo-name img{
+
+@media (max-width:576px) {
+  .logo-name img {
     width: 80px;
   }
-  .logo-name h2{
+
+  .logo-name h2 {
     font-size: 18px;
   }
-  .enter-menu-box{
+
+  .enter-menu-box {
     display: flex;
   }
-  .enter-menu-box a,.enter-menu-box span{
+
+  .enter-menu-box a,
+  .enter-menu-box span {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .enter-menu-box .look-menu{
+
+  .enter-menu-box .look-menu {
     text-align: center;
   }
-  .contact-us .contact-info{
+
+  .contact-us .contact-info {
     display: flex;
     justify-content: space-evenly;
   }
-  .contact-us .contact-info h2{
+
+  .contact-us .contact-info h2 {
     text-align: center;
     font-size: 15px;
   }
-  .phone-details,.location-details{
+
+  .phone-details,
+  .location-details {
     display: flex;
     justify-content: space-between;
   }
-  .contact-links a{
+
+  .contact-links a {
     font-size: 15px;
     padding: 8px !important;
   }
-  .enter-menu,.contact-us-box{
+
+  .enter-menu,
+  .contact-us-box,.working-hours-content {
     width: 100%;
   }
-  .enter-menu-box,.contact-us{
+
+  .enter-menu-box,
+  .contact-us,.working-hours-box {
     width: 88%;
   }
 }
