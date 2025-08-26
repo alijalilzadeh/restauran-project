@@ -10,7 +10,7 @@ const downPart = document.querySelector(".down-part");
 const arrowLeft = document.querySelector(".fa-arrow-left");
 let isDark = true;
 window.addEventListener("scroll",()=>{
-  if(window.scrollY > 70){
+  if(window.scrollY > 72){
     downPart.classList.add("fixed");
   }
   else{
