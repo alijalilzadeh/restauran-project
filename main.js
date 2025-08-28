@@ -8,15 +8,23 @@ const hElements = document.querySelectorAll(".section-title");
 const navbarLinks = document.querySelector(".navbar-links");
 const downPart = document.querySelector(".down-part");
 const arrowLeft = document.querySelector(".fa-arrow-left");
+const arrowUp = document.querySelector(".arrow-up");
+const addClick = document.querySelectorAll(".fa-plus");
 let isDark = true;
-window.addEventListener("scroll",()=>{
-  if(window.scrollY > 72){
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 72) {
     downPart.classList.add("fixed");
   }
-  else{
+  else {
+    arrowUp.classList.add("hidden");
     downPart.classList.remove("fixed");
   }
+  if (window.scrollY > 110) {
+    arrowUp.classList.remove("hidden");
+  }
 })
+
 moonIcon.addEventListener("click", () => {
   imageBoxes.forEach(box => {
     box.classList.toggle("night-effect");
@@ -42,3 +50,29 @@ moonIcon.addEventListener("click", () => {
   moonIcon.className = changingTema;
   isDark = !isDark;
 });
+let counter = 0;
+let priceBasket = 0;
+addClick.forEach(click => {
+  click.addEventListener("click", () => {
+    counter++;
+    const audioClick = document.querySelector(".clickaudio");
+    audioClick.play();
+
+    const counterPart = document.querySelector(".counter");
+    const basketPart = document.querySelector(".left-side span");
+
+    const parentBox = click.parentElement;
+    const foodPriceEl = parentBox.querySelector(".food-price");
+
+    if (foodPriceEl) {
+      const foodPriceText = foodPriceEl.textContent;
+      const numericPrice = parseFloat(foodPriceText.replace("AZN", "").replace(",", "."));
+
+      priceBasket += numericPrice;
+
+      counterPart.innerText = counter;
+      basketPart.innerText = priceBasket + " AZN";
+    }
+  });
+});
+

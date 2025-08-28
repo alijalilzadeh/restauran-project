@@ -140,23 +140,9 @@ body {
 }
 
 .upper-part img {
-  width: 50px;
+  width: 40px !important;
   cursor: pointer;
   border-radius: 50%;
-}
-
-.restauran-footer-logo {
-  display: flex;
-  align-items: flex-end;
-  gap: .7rem;
-}
-
-.restauran-footer-logo img {
-  width: 50px;
-  cursor: pointer;
-  border-radius: 50%;
-  align-items: center;
-  display: flex;
 }
 
 .seperating-line {
@@ -192,18 +178,18 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6
   border-radius: 25px;
   padding: 8px 10px;
   transition: all .45s;
-  font-size: 15px;
+  font-size: 16px !important;
 }
 
 .navbar-links li a:hover {
   color: #fff;
-  background-color: black;
+  background-color: #161827;
 }
 
 section {
   scroll-margin-top: 80px;
   margin-top: 1rem;
-  padding: 0 2rem;
+  padding: 0 2rem !important;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -238,7 +224,6 @@ section {
 }
 
 .image-box:hover {
-  transform: translateY(-6px);
   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px !important;
 }
 
@@ -260,7 +245,32 @@ section {
   object-fit: cover;
   overflow: hidden;
 }
-
+.clickaudio{
+  display: none;
+}
+.add-price{
+  display: flex;
+  justify-content: space-between;
+}
+.fa-solid.fa-plus{
+  color: #fff ;
+  border-radius: 50%;
+  font-weight: 600;
+  padding: 5px;
+  font-size: 10px;
+  display: flex;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background-color: #161827;
+transition: all .4s;
+}
+.fa-solid.fa-plus:hover{
+    transform: scale(1.1);
+    font-size: 11px;
+}
 .image-box p {
   padding: 15px 22px;
 }
@@ -272,7 +282,6 @@ section {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #333;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -310,10 +319,6 @@ section {
 
 .image-box p {
   padding: 15px 22px;
-}
-
-.image-box:hover {
-  transform: translateY(-6px);
 }
 
 .contact-links {
@@ -369,7 +374,76 @@ section {
   background-color: #000;
   color: #fff;
 }
+/*  <div class="card-box-content">
+      <div class="card-box">
+        <div class="left-side">
+          <p class="basket-price">Your Basket</p>
+          <span>0.00 AZN</span>
+        </div>
+        <div class="right-side">
+          <div class="counter">0</div>
+          <i class="fa-solid fa-basket-shopping"></i>
+        </div>
+      </div>
+    </div> */
 
+.card-box-content{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+}
+.card-box {
+  background-color: rgba(22, 24, 39, .867); 
+  display: flex;
+  justify-content: space-between;
+  border-radius: 18px 18px 0 0;
+  padding: 25px 30px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); 
+}
+
+.left-side,.right-side{
+  display: flex;
+}
+.left-side{
+  gap: .4rem;
+  display: flex;
+  align-items: center;
+}
+.left-side p{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+.left-side span{
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+}
+.right-side{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.right-side .counter{
+  position: absolute;
+  margin-left: 15px;
+  background-color: #161827;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-weight: 800 ;
+  top: -10px ;
+}
+.right-side i{
+  color: #fff;
+  margin-right: 30px;
+  font-size: 18px;
+}
 @media (max-width: 1024px) {
   .section-title {
     font-size: 30px;
@@ -440,17 +514,26 @@ section {
 .food-price {
   font-size: 17px;
 }
-
+.arrow-up{
+  opacity: 1;
+  display: flex;
+  transition: all .4s;
+}
 .arrow-up a {
   bottom: 20px;
+  background-color: #161827;
   right: 20px;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
   font-size: 20px;
 }
-
-.image-box:hover {
-  transform: translateY(-3px);
+.arrow-up.hidden{
+  opacity: 0;
+  display: none;
+  transition: all .4s;
 }
 
 @media (max-width: 576px) {
@@ -472,7 +555,7 @@ section {
   }
 
   .navbar-links a {
-    font-size: 13px !important;
+    font-size: 15px !important;
   }
 
   .image-boxs-container {
