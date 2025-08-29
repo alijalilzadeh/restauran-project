@@ -56,7 +56,7 @@ addClick.forEach(click => {
    
   click.addEventListener("click", () => {
     counter++;
-     const audioClick = document.querySelector(".clickaudio");
+    const audioClick = document.querySelector(".clickaudio");
     audioClick.play();
     const counterPart = document.querySelector(".counter");
     const basketPart = document.querySelector(".left-side span");
