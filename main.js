@@ -53,17 +53,17 @@ moonIcon.addEventListener("click", () => {
 let counter = 0;
 let priceBasket = 0;
 addClick.forEach(click => {
+   
   click.addEventListener("click", () => {
     counter++;
-    const audioClick = document.querySelector(".clickaudio");
+     const audioClick = document.querySelector(".clickaudio");
     audioClick.play();
-
     const counterPart = document.querySelector(".counter");
     const basketPart = document.querySelector(".left-side span");
 
     const parentBox = click.parentElement;
     const foodPriceEl = parentBox.querySelector(".food-price");
-
+    const aznCur = document.querySelector(".food-price span").textContent;
     if (foodPriceEl) {
       const foodPriceText = foodPriceEl.textContent;
       const numericPrice = parseFloat(foodPriceText.replace("AZN", "").replace(",", "."));
@@ -71,7 +71,7 @@ addClick.forEach(click => {
       priceBasket += numericPrice;
 
       counterPart.innerText = counter;
-      basketPart.innerText = priceBasket + " AZN";
+      basketPart.innerText = priceBasket + " " + aznCur;
     }
   });
 });

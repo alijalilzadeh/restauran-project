@@ -6,7 +6,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+a{
+  text-decoration: none !important;
+}
 body {
   background-color: #F8F9FA;
   height: 100vh;
@@ -50,7 +52,10 @@ body {
   color: #212529;
   font-size: 25px;
 }
-
+.logo-name p{
+  color: #333;
+  font-size: 14px;
+}
 .look-menu+a {
   text-decoration: none;
   display: flex;
@@ -311,7 +316,61 @@ p.day-status{
 
   }
 }
+@media (max-width:1024px) {
+  .logo-name img {
+    width: 80px;
+  }
 
+  .logo-name h2 {
+    font-size: 18px;
+  }
+
+  .enter-menu-box {
+    display: flex;
+  }
+
+  .enter-menu-box a,
+  .enter-menu-box span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .enter-menu-box .look-menu {
+    text-align: center;
+  }
+
+  .contact-us .contact-info {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .contact-us .contact-info h2 {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .phone-details,
+  .location-details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contact-links a {
+    font-size: 15px;
+    padding: 8px !important;
+  }
+
+  .enter-menu,
+  .contact-us-box,.working-hours-content {
+    width: 90%;
+  }
+
+  .enter-menu-box,
+  .contact-us,.working-hours-box {
+    width: 70%;
+  }
+}
 @media (max-width:576px) {
   .logo-name img {
     width: 80px;
