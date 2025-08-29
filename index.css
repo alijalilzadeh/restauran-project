@@ -215,12 +215,14 @@ p.day-status{
 .contact-info {
   display: flex;
   gap: 1rem;
+  justify-content: center;
   align-items: center;
 }
 
 .contact-info h2 {
   color: #212529;
-  font-size: 18px;
+  font-size: 18px !important;
+  text-align: center;
 }
 
 .phone-details,
@@ -333,21 +335,16 @@ p.day-status{
   .enter-menu-box span {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center ;
   }
 
   .enter-menu-box .look-menu {
     text-align: center;
   }
 
-  .contact-us .contact-info {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
   .contact-us .contact-info h2 {
     text-align: center;
-    font-size: 15px;
+    font-size: 16px !important;
   }
 
   .phone-details,
@@ -397,7 +394,6 @@ p.day-status{
 
   .contact-us .contact-info {
     display: flex;
-    justify-content: space-evenly;
   }
 
   .contact-us .contact-info h2 {
