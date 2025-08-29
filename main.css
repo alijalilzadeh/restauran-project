@@ -298,7 +298,7 @@ section {
 .arrow-up a {
   position: fixed;
   bottom: 100px;
-  right: 0;
+  right: 8px !important;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -541,11 +541,7 @@ section {
     gap: 1rem;
   }
 
-  .arrow-up a {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-  }
+  
 
   .upper-part {
     gap: 1rem;
