@@ -26,7 +26,7 @@ html {
 
 .upper-part span i,
 .img-logo i,
-.close-part i {
+.close-part i,.basket-box-upper i {
   background-color: #F2F3F4;
   width: 30px;
   height: 30px;
@@ -42,7 +42,7 @@ html {
 
 .upper-part span i:hover,
 .img-logo i:hover,
-.close-part i:hover {
+.close-part i:hover,.basket-box-upper i:hover {
   background-color: #DFE0E1;
 }
 
@@ -441,6 +441,88 @@ section {
   transform: scale(1.1);
 }
 
+.basket-sidebar.opened{
+  display: block;
+}
+.basket-sidebar.closed{
+  display: none;
+}
+.basket-sidebar{
+  display: none;
+  height: 100vh;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 700;
+}
+.basket-box{
+  height: 100vh;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  background-color: #fff;
+  flex-direction: column;
+}
+.total-basket-part{
+  display: flex;
+  font-palette: .8rem;
+  flex-direction: column;
+  background-color: #f9f7f7;
+
+}
+.subtotal-content,.total-content{
+  display: flex;
+  border: 1px solid #f2eded;
+  padding: 1.5rem ;
+  justify-content: space-between;
+}
+.subtotal-content p{
+  font-weight: 500;
+  color: #333;
+  font-size: 15px;
+
+}
+.total-content p{
+ font-weight: 700;
+  color: #333;
+  font-size: 18px;
+}
+.total-content .total-price{
+  color:#161827;
+}
+.basket-box-upper{
+  padding: 1.5rem 2rem;
+  background-color: #fbfafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.basket-box-upper i{
+  cursor: pointer;
+  padding: 16px !important;
+  transition: all .4s;
+}
+.basket-box-upper i:hover{
+  transform: rotateZ(180deg);
+}
+
+.empty-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.empty-box i{
+  font-size: 28px;
+  color: #3F4555;
+}
+.empty-box h3{
+  color: #3F4346;
+  font-weight: 500;
+}
+
 @media (max-width: 1024px) {
   .section-title {
     font-size: 30px;
@@ -603,4 +685,27 @@ section {
   .contact-links a {
     font-size: 13px;
   }
+
+ .basket-sidebar{
+  width: 100%;
+ }
+ .basket-box-upper h2{
+  font-size: 18px;
+ }
+ .basket-box-upper i{
+  font-size: 13px !important;
+ }
+ .empty-box i{
+  font-size: 25px;
+ }
+ .empty-box h3{
+  font-size: 16px;
+ }
+ .subtotal-content p{
+  font-size: 14px;
+
+ }
+ .total-content p{
+  font-size: 16px;
+ }
 }
