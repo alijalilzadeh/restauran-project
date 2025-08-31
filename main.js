@@ -13,6 +13,7 @@ const addClick = document.querySelectorAll(".fa-plus");
 const basketIcon = document.querySelector(".right-side");
 const basketSideBar = document.querySelector(".basket-sidebar");
 const xMark = document.querySelector(".fa-xmark");
+const basketUpgrade = document.querySelectorAll(".basket-counter .upgrade");
 let isDark = true;
 
 window.addEventListener("scroll", () => {
@@ -57,13 +58,14 @@ moonIcon.addEventListener("click", () => {
 let counter = 0;
 let priceBasket = 0;
 addClick.forEach(click => {
-
   click.addEventListener("click", () => {
     counter++;
     const audioClick = document.querySelector(".clickaudio");
     audioClick.play();
+
     const counterPart = document.querySelector(".counter");
     const basketPart = document.querySelector(".left-side span");
+    const emptyCheck = document.querySelector(".empty-box");
 
     const basketSubTotal = document.querySelector(".subtotal-price");
     const basketTotal = document.querySelector(".total-price");
@@ -79,17 +81,61 @@ addClick.forEach(click => {
     counterPart.innerText = counter;
     basketPart.innerText = priceBasket + " " + aznCur;
 
-    basketSubTotal.innerText =  priceBasket + " " + aznCur;
+    basketSubTotal.innerText = priceBasket + " " + aznCur;
     basketTotal.innerText = priceBasket + " " + aznCur;
+    if (basketTotal.innerText == "0.00" + " " + aznCur) {
+      emptyCheck.style.display = "block";
+    }
+    else {
+      emptyCheck.style.display = "none";
+    }
+
+    const basketBox = click.parentElement.parentElement;
+    const basketImage = basketBox.querySelector("img").src;
+    const basketName = basketBox.querySelector(".food-name").textContent;
+    const basketPrice = basketBox.querySelector(".food-price").textContent;
+    displayBasket(basketImage,basketName,basketPrice)
+    console.log(basketImage)
+    console.log(basketName)
+    console.log(basketPrice)
+    console.log(basketBox)
+    // displayBasket();
+
   });
 });
+
+// function  displayBasket(basketImage,basketName,basketPrice){
+//   const basketContent = document.querySelector(".orders-box");
+
+//   basketContent.innerHTML += 
+//   `
+//   <div class="basket-content">
+//           <div class="img-part">
+//              <img src="${basketImage}" alt="Pizza Photo" class="basket-img">
+//            </div>
+//           <div class="detail-part">
+//              <p class="basket-name">${basketName}</p>
+//              <p class="basket-price">${basketPrice}</p>
+//              <div class="basket-counter">
+//                <span class="minus">-</span>
+//               <span class ="changer">1</span>
+//                <span class="plus">+</span>
+//              </div>
+//            </div>
+//            <span><i class="fa-solid fa-trash"></i></span>
+//          </div>
+  
+  
+//   `
+//    basketContent.scrollTop = basketContent.scrollHeight;
+// }
+
 function calculatePrice(element) {
   let foodPriceText = element.textContent;
   let numeric = parseFloat(foodPriceText.replace("AZN", "").replace(",", "."));
-  
+
   return numeric;
 }
-
 
 basketIcon.addEventListener("click", () => {
   basketSideBar.classList.remove("closed");
@@ -101,30 +147,50 @@ xMark.addEventListener("click", () => {
   basketSideBar.classList.add("closed");
 })
 
-  /* 
- <div class="basket-sidebar">
-    <div class="basket-box">
-      <div class="basket-box-upper">
-        <h2 class="basket-title">Səbətiniz</h2>
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-      <div class="empty-box">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <h3 class="basket-empty">Your basket is empty</h3>
-      </div>
-      <div class="orders-box">
-
-      </div>
-      <div class="total-basket-part">
-        <div class="subtotal-content">
-            <p class="subtotal-p">Subtotal</p>
-            <p class="subtotal-price">0.00 <span>&#8380;</span></p>
-        </div>
-        <div class="total-content">
-            <p class="total-p">Total</p>
-            <p class="total-price">0.00 <span>&#8380;</span></p>
-        </div>
-      </div>
-    </div>
+/*
+<div class="image-box">
+  <img src="Pizza/funghipolo.jpg" alt="Pizza Photo">
+  <p class="food-name">Funghi polo</p>
+  <div class="add-price">
+    <p class="food-price">13 <span>&#8380;</span></p>
+     <i class="fa-solid fa-plus"></i>
   </div>
- */
+</div>
+*/
+
+
+       
+
+
+
+
+ // let count = 1;
+    // let counterElement = document.querySelector(".basket-counter .changer");
+    // basketItem.querySelector(".minus").addEventListener("click", () => {
+    //   count--;
+    //   counter = count;
+    //   if (count < 0) {
+    //     count = 1;
+    //   }
+    //   counterElement.innerText = counter;
+    //   priceBasket -= numericPrice;
+
+    //   counterPart.innerText = counter;
+    //   basketPart.innerText = priceBasket + " " + aznCur;
+
+    //   basketSubTotal.innerText = priceBasket + " " + aznCur;
+    //   basketTotal.innerText = priceBasket + " " + aznCur;
+    // }
+    // );
+    // basketItem.querySelector(".plus").addEventListener("click", () => {
+    //   count++;
+    //   counterElement.innerText = count;
+    //   counter = count;
+    //   counterElement.innerText = count;
+    //   priceBasket += numericPrice;
+    //   counterPart.innerText = counter;
+    //   basketPart.innerText = priceBasket + " " + aznCur;
+
+    //   basketSubTotal.innerText = priceBasket + " " + aznCur;
+    //   basketTotal.innerText = priceBasket + " " + aznCur;
+    // });

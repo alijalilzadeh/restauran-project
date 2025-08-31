@@ -25,13 +25,13 @@ copyIcon2.addEventListener("click", () => {
 });
 function checkStatus() {
   const dayLists = {
+    0: "Bazar",
     1: "Bazar ertəsi",
     2: "Çərşənbə axşamı",
     3: "Çərşənbə",
     4: "Cümə axşamı",
     5: "Cümə",
-    6: "Şənbə",
-    7: "Bazar"
+    6: "Şənbə"
   }
   const textStatus = document.querySelector(".status p");
   const statusCircle = document.querySelector(".circle");
@@ -39,6 +39,7 @@ function checkStatus() {
   const now = new Date();
   const hour = now.getHours();
   const day = now.getDay();
+  console.log(day)
   dayStatus.innerText = `${dayLists[day]} / 9:00 : 00:00`
   if (hour >= 9 && hour < 24) {
     statusCircle.className = "circle open";
