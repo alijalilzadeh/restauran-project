@@ -56,86 +56,128 @@ moonIcon.addEventListener("click", () => {
 });
 
 let counter = 0;
-let priceBasket = 0;
+let totalBasket = 0;
+
 addClick.forEach(click => {
   click.addEventListener("click", () => {
     counter++;
     const audioClick = document.querySelector(".clickaudio");
     audioClick.play();
 
-    const counterPart = document.querySelector(".counter");
-    const basketPart = document.querySelector(".left-side span");
-    const emptyCheck = document.querySelector(".empty-box");
-
-    const basketSubTotal = document.querySelector(".subtotal-price");
-    const basketTotal = document.querySelector(".total-price");
-
     const parentBox = click.parentElement;
     const foodPriceEl = parentBox.querySelector(".food-price");
     const aznCur = document.querySelector(".food-price span").textContent;
 
-    const numericPrice = calculatePrice(foodPriceEl);
+    let foodPriceText = foodPriceEl.textContent;
+    let editItem = parseFloat(foodPriceText.replace("AZN", "").replace(",", "."));
+    totalBasket += editItem;
 
-    priceBasket += numericPrice;
-
-    counterPart.innerText = counter;
-    basketPart.innerText = priceBasket + " " + aznCur;
-
-    basketSubTotal.innerText = priceBasket + " " + aznCur;
-    basketTotal.innerText = priceBasket + " " + aznCur;
-    if (basketTotal.innerText == "0.00" + " " + aznCur) {
-      emptyCheck.style.display = "block";
-    }
-    else {
-      emptyCheck.style.display = "none";
-    }
+    editTotal();
 
     const basketBox = click.parentElement.parentElement;
-    const basketImage = basketBox.querySelector("img").src;
+    const basketImage = basketBox.querySelector("img");
     const basketName = basketBox.querySelector(".food-name").textContent;
     const basketPrice = basketBox.querySelector(".food-price").textContent;
-    displayBasket(basketImage,basketName,basketPrice)
-    console.log(basketImage)
-    console.log(basketName)
-    console.log(basketPrice)
-    console.log(basketBox)
-    // displayBasket();
 
+    displayBasketBox(basketImage.src, basketName, basketPrice);
   });
 });
 
-// function  displayBasket(basketImage,basketName,basketPrice){
-//   const basketContent = document.querySelector(".orders-box");
+function displayBasketBox(basketImage, basketName, basketPrice) {
+  const orderBox = document.querySelector(".orders-box");
+  const newItem = document.createElement("div");
+  newItem.classList.add("basket-content");
 
-//   basketContent.innerHTML += 
-//   `
-//   <div class="basket-content">
-//           <div class="img-part">
-//              <img src="${basketImage}" alt="Pizza Photo" class="basket-img">
-//            </div>
-//           <div class="detail-part">
-//              <p class="basket-name">${basketName}</p>
-//              <p class="basket-price">${basketPrice}</p>
-//              <div class="basket-counter">
-//                <span class="minus">-</span>
-//               <span class ="changer">1</span>
-//                <span class="plus">+</span>
-//              </div>
-//            </div>
-//            <span><i class="fa-solid fa-trash"></i></span>
-//          </div>
+  newItem.innerHTML = `
+    <div class="img-part">
+      <img src="${basketImage}" alt="Pizza Photo" class="basket-img">
+    </div>
+    <div class="detail-part">
+      <p class="basket-name">${basketName}</p>
+      <p class="basket-price">${basketPrice}</p>
+      <div class="basket-counter">
+        <span class="minus">-</span>
+        <span class="changer">1</span>
+        <span class="plus">+</span>
+      </div>
+    </div>
+    <span><i class="fa-solid fa-trash"></i></span>
+  `;
+
   
-  
-//   `
-//    basketContent.scrollTop = basketContent.scrollHeight;
-// }
+  const deleteItem = newItem.querySelector(".fa-trash");
+  deleteItem.addEventListener("click", () => {
+    deleteBasketBox(newItem, basketPrice);
+  });
 
-function calculatePrice(element) {
-  let foodPriceText = element.textContent;
-  let numeric = parseFloat(foodPriceText.replace("AZN", "").replace(",", "."));
+  const plusEdit = newItem.querySelector(".plus");
+  const minusEdit = newItem.querySelector(".minus");
+  const counterEdit = newItem.querySelector(".changer");
 
-  return numeric;
+  let itemCount = 1;
+
+  plusEdit.addEventListener("click", () => {
+    itemCount++;
+    counter++;
+    counterEdit.innerText = itemCount;
+
+    let numeric = parseFloat(basketPrice.replace("AZN", "").replace(",", "."));
+    totalBasket += numeric;
+
+    editTotal();
+  });
+
+  minusEdit.addEventListener("click", () => {
+    if (itemCount > 1) {
+      itemCount--;
+      counter--;
+      counterEdit.innerText = itemCount;
+
+      let numeric = parseFloat(basketPrice.replace("AZN", "").replace(",", "."));
+      totalBasket -= numeric;
+
+      editTotal();
+    }
+  });
+
+  orderBox.appendChild(newItem);
+  orderBox.scrollTop = orderBox.scrollHeight;
 }
+
+function deleteBasketBox(itemElement, price) {
+  itemElement.remove();
+  counter--;
+
+  let numeric = parseFloat(price.replace("AZN", "").replace(",", "."));
+  totalBasket -= numeric;
+
+  if (totalBasket < 0) totalBasket = 0;
+  if (counter < 0) counter = 0;
+
+  editTotal();
+}
+
+function editTotal() {
+  const counterPart = document.querySelector(".counter");
+  const basketPart = document.querySelector(".left-side span");
+  const emptyCheck = document.querySelector(".empty-box");
+
+  const basketSubTotal = document.querySelector(".subtotal-price");
+  const basketTotal = document.querySelector(".total-price");
+  const aznCur = document.querySelector(".food-price span").textContent;
+
+  basketPart.innerText = totalBasket + " " + aznCur;
+  basketSubTotal.innerText = totalBasket + " " + aznCur;
+  basketTotal.innerText = totalBasket + " " + aznCur;
+  counterPart.innerText = counter;
+
+  if (totalBasket === 0) {
+    emptyCheck.style.display = "block";
+  } else {
+    emptyCheck.style.display = "none";
+  }
+}
+
 
 basketIcon.addEventListener("click", () => {
   basketSideBar.classList.remove("closed");
@@ -145,52 +187,4 @@ basketIcon.addEventListener("click", () => {
 xMark.addEventListener("click", () => {
   basketSideBar.classList.remove("opened");
   basketSideBar.classList.add("closed");
-})
-
-/*
-<div class="image-box">
-  <img src="Pizza/funghipolo.jpg" alt="Pizza Photo">
-  <p class="food-name">Funghi polo</p>
-  <div class="add-price">
-    <p class="food-price">13 <span>&#8380;</span></p>
-     <i class="fa-solid fa-plus"></i>
-  </div>
-</div>
-*/
-
-
-       
-
-
-
-
- // let count = 1;
-    // let counterElement = document.querySelector(".basket-counter .changer");
-    // basketItem.querySelector(".minus").addEventListener("click", () => {
-    //   count--;
-    //   counter = count;
-    //   if (count < 0) {
-    //     count = 1;
-    //   }
-    //   counterElement.innerText = counter;
-    //   priceBasket -= numericPrice;
-
-    //   counterPart.innerText = counter;
-    //   basketPart.innerText = priceBasket + " " + aznCur;
-
-    //   basketSubTotal.innerText = priceBasket + " " + aznCur;
-    //   basketTotal.innerText = priceBasket + " " + aznCur;
-    // }
-    // );
-    // basketItem.querySelector(".plus").addEventListener("click", () => {
-    //   count++;
-    //   counterElement.innerText = count;
-    //   counter = count;
-    //   counterElement.innerText = count;
-    //   priceBasket += numericPrice;
-    //   counterPart.innerText = counter;
-    //   basketPart.innerText = priceBasket + " " + aznCur;
-
-    //   basketSubTotal.innerText = priceBasket + " " + aznCur;
-    //   basketTotal.innerText = priceBasket + " " + aznCur;
-    // });
+});

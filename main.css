@@ -482,7 +482,6 @@ section {
   bottom: 0;
   width: 100%;
   justify-content: flex-end;
-  font-palette: .8rem;
   flex-direction: column;
   background-color: #f9f7f7;
 
@@ -494,6 +493,7 @@ section {
   border: 1px solid #f2eded;
   padding: 1.5rem;
   justify-content: space-between;
+  align-items: center;
 }
 
 .subtotal-content p {
@@ -553,36 +553,18 @@ section {
   font-weight: 500;
 }
 
-/* .orders-box {
+ .orders-box {
   padding: 0 15px;
   overflow-y: auto;
   max-height: 500px;
   scroll-behavior: smooth;
-} */
+} 
 
-/* 
-<div class="basket-content">
-          <div class="img-part">
-            <img src="Pizza/funghipolo.jpg" alt="Pizza Photo" class="basket-img">
-          </div>
-          <div class="detail-part">
-            <p class="basket-name">Funghi polo</p>
-            <p class="basket-price">13 <span>&#8380;</span></p>
-            <div class="basket-counter">
-              <span class="minus">-</span>
-              <span>1</span>
-              <span class="plus">+</span>
-            </div>
-          </div>
-          <span><i class="fa-solid fa-trash"></i></span>
-        </div> 
-*/
 .basket-content {
   width: 95%;
   height: auto;
   display: flex;
   gap: 1rem;
-  overflow-y: auto;
   border-bottom: 1px solid #f0ecec;
   position: relative;
   align-items: center;
@@ -617,9 +599,9 @@ section {
 
 .detail-part .basket-name {
   font-weight: 600;
-  color: #333;
   white-space: wrap;
-  font-size: 20px !important;
+  color: #333;
+  font-size: 19px !important;
 
 }
 
@@ -678,7 +660,7 @@ section {
 
 @media (max-width: 1024px) {
   .section-title {
-    font-size: 30px;
+    font-size: 30px !important;
   }
 
   section {
@@ -750,9 +732,9 @@ section {
 
 @media (max-width: 576px) {
   .orders-box {
-    overflow-y: auto;
-    max-height: 800px;
-    scroll-behavior: smooth;
+   max-height: 100vh;   
+  overflow-y: auto;  
+  padding-bottom: 100px; 
   }
 
   .fa-solid.fa-plus {
@@ -774,7 +756,7 @@ section {
   }
 
   section {
-    padding: 0 .6rem !important;
+    padding: 0 .8rem !important;
   }
 
   .navbar-links a {
@@ -802,7 +784,7 @@ section {
   }
 
   .section-title {
-    font-size: 26epx !important;
+    font-size: 22px !important;
   }
 
   .image-box {
@@ -884,13 +866,13 @@ section {
   }
 
   .detail-part .basket-name {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .detail-part .basket-price {
     font-size: 17px !important;
   }
-  .subtotal-content,
+.subtotal-content,
 .total-content{
   padding: .6rem 1rem !important;
 }
