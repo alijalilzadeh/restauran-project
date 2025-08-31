@@ -531,29 +531,34 @@ section {
 }
 
 .empty-box {
-  display: none;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
+  padding: 2rem 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .empty-box i.empty {
   pointer-events: none;
-  font-size: 28px;
+  display: flex;
+  font-size: 26px !important;
   color: #3F4555;
 }
 
 .empty-box h3 {
+  text-align: center;
   color: #3F4346;
   font-weight: 500;
 }
 
-.orders-box {
+/* .orders-box {
   padding: 0 15px;
   overflow-y: auto;
   max-height: 500px;
   scroll-behavior: smooth;
-}
+} */
 
 /* 
 <div class="basket-content">
@@ -885,5 +890,8 @@ section {
   .detail-part .basket-price {
     font-size: 17px !important;
   }
-
+  .subtotal-content,
+.total-content{
+  padding: .6rem 1rem !important;
+}
 }
