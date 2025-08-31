@@ -171,7 +171,7 @@ function editTotal() {
   counterPart.innerText = counter;
 
   if (totalBasket === 0) {
-    emptyCheck.style.display = "block";
+    emptyCheck.style.display = "flex";
   } else {
     emptyCheck.style.display = "none";
   }
