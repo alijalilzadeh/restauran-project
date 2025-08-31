@@ -104,17 +104,16 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
     <span><i class="fa-solid fa-trash"></i></span>
   `;
 
-  
+  let itemCount = 1;
   const deleteItem = newItem.querySelector(".fa-trash");
   deleteItem.addEventListener("click", () => {
-    deleteBasketBox(newItem, basketPrice);
+    deleteBasketBox(newItem, basketPrice,itemCount);
   });
 
   const plusEdit = newItem.querySelector(".plus");
   const minusEdit = newItem.querySelector(".minus");
   const counterEdit = newItem.querySelector(".changer");
 
-  let itemCount = 1;
 
   plusEdit.addEventListener("click", () => {
     itemCount++;
@@ -144,12 +143,12 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
   orderBox.scrollTop = orderBox.scrollHeight;
 }
 
-function deleteBasketBox(itemElement, price) {
+function deleteBasketBox(itemElement, price,itemCount) {
   itemElement.remove();
   counter--;
 
   let numeric = parseFloat(price.replace("AZN", "").replace(",", "."));
-  totalBasket -= numeric;
+  totalBasket -= numeric*itemCount;
 
   if (totalBasket < 0) totalBasket = 0;
   if (counter < 0) counter = 0;
