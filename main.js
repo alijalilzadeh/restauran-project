@@ -145,7 +145,7 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
 
 function deleteBasketBox(itemElement, price,itemCount) {
   itemElement.remove();
-  counter--;
+  counter-=itemCount;
 
   let numeric = parseFloat(price.replace("AZN", "").replace(",", "."));
   totalBasket -= numeric*itemCount;
