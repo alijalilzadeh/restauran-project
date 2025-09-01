@@ -575,7 +575,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 30%;
   height: 100%;
 }
 
@@ -855,7 +855,7 @@ section {
   }
 
   .img-part {
-    width: 40%;
+    width: 30%;
     height: 100%;
 
   }
