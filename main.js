@@ -66,7 +66,6 @@ addClick.forEach(click => {
 
     const parentBox = click.parentElement;
     const foodPriceEl = parentBox.querySelector(".food-price");
-    const aznCur = document.querySelector(".food-price span").textContent;
 
     let foodPriceText = foodPriceEl.textContent;
     let editItem = parseFloat(foodPriceText.replace("AZN", "").replace(",", "."));
@@ -83,16 +82,25 @@ addClick.forEach(click => {
   });
 });
 
-let itemCount = 1;
-
 function displayBasketBox(basketImage, basketName, basketPrice) {
-
   const orderBox = document.querySelector(".orders-box");
+  const basketItems = orderBox.querySelectorAll(".basket-content");
+
+  for (let item of basketItems) {
+    const name = item.querySelector(".basket-name").textContent;
+    if (name === basketName) {
+      let countSpan = item.querySelector(".changer");
+      let currentCount = parseInt(countSpan.textContent);
+      countSpan.textContent = currentCount + 1;
+      return; 
+    }
+  }
+
   const newItem = document.createElement("div");
   newItem.classList.add("basket-content");
   newItem.innerHTML = `
     <div class="img-part">
-      <img src="${basketImage}" alt="Pizza Photo" class="basket-img">
+      <img src="${basketImage}" alt="Food Photo" class="basket-img">
     </div>
     <div class="detail-part">
       <p class="basket-name">${basketName}</p>
@@ -105,30 +113,25 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
     </div>
     <span><i class="fa-solid fa-trash"></i></span>
   `;
-  const basketItems = orderBox.querySelectorAll(".basket-content");
-  for (let item of basketItems) {
-    const name = item.querySelector(".basket-name").textContent;
-    if (name === basketName) {
-      let countSpan = item.querySelector(".changer");
-      countSpan.textContent = parseInt(countSpan.textContent) + 1;
-      itemCount = countSpan.textContent;
-      return;
-    }
-  }
+
   const deleteItem = newItem.querySelector(".fa-trash");
+  const singleItemPrice = parseFloat(basketPrice.replace("AZN", "").replace(",", "."));
+
   deleteItem.addEventListener("click", () => {
-    deleteBasketBox(newItem, basketPrice, itemCount);
+    const itemElement = deleteItem.closest(".basket-content");
+    const itemCount = parseInt(itemElement.querySelector(".changer").textContent);
+    deleteBasketBox(itemElement, singleItemPrice, itemCount);
   });
 
   const plusEdit = newItem.querySelector(".plus");
   const minusEdit = newItem.querySelector(".minus");
   const counterEdit = newItem.querySelector(".changer");
 
-
   plusEdit.addEventListener("click", () => {
-    itemCount++;
+    let currentCount = parseInt(counterEdit.textContent);
+    currentCount++;
     counter++;
-    counterEdit.innerText = itemCount;
+    counterEdit.innerText = currentCount;
 
     let numeric = parseFloat(basketPrice.replace("AZN", "").replace(",", "."));
     totalBasket += numeric;
@@ -137,15 +140,19 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
   });
 
   minusEdit.addEventListener("click", () => {
-    if (itemCount > 1) {
-      itemCount--;
+    let currentCount = parseInt(counterEdit.textContent);
+    if (currentCount > 1) {
+      currentCount--;
       counter--;
-      counterEdit.innerText = itemCount;
+      counterEdit.innerText = currentCount;
 
       let numeric = parseFloat(basketPrice.replace("AZN", "").replace(",", "."));
       totalBasket -= numeric;
 
       editTotal();
+    } else if (currentCount === 1) {
+      const itemElement = minusEdit.closest(".basket-content");
+      deleteBasketBox(itemElement, singleItemPrice, 1);
     }
   });
 
@@ -157,8 +164,7 @@ function deleteBasketBox(itemElement, price, itemCount) {
   itemElement.remove();
   counter -= itemCount;
 
-  let numeric = parseFloat(price.replace("AZN", "").replace(",", "."));
-  totalBasket -= numeric * itemCount;
+  totalBasket -= price * itemCount;
 
   if (totalBasket < 0) totalBasket = 0;
   if (counter < 0) counter = 0;
@@ -173,11 +179,11 @@ function editTotal() {
 
   const basketSubTotal = document.querySelector(".subtotal-price");
   const basketTotal = document.querySelector(".total-price");
-  const aznCur = document.querySelector(".food-price span").textContent;
+  const aznCur = "AZN"; 
 
-  basketPart.innerText = totalBasket + " " + aznCur;
-  basketSubTotal.innerText = totalBasket + " " + aznCur;
-  basketTotal.innerText = totalBasket + " " + aznCur;
+  basketPart.innerText = totalBasket.toFixed(2) + " " + aznCur;
+  basketSubTotal.innerText = totalBasket.toFixed(2) + " " + aznCur;
+  basketTotal.innerText = totalBasket.toFixed(2) + " " + aznCur;
   counterPart.innerText = counter;
 
   if (totalBasket === 0) {
@@ -186,7 +192,6 @@ function editTotal() {
     emptyCheck.style.display = "none";
   }
 }
-
 
 basketIcon.addEventListener("click", () => {
   basketSideBar.classList.remove("closed");
@@ -197,3 +202,4 @@ xMark.addEventListener("click", () => {
   basketSideBar.classList.remove("opened");
   basketSideBar.classList.add("closed");
 });
+
