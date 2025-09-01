@@ -83,11 +83,13 @@ addClick.forEach(click => {
   });
 });
 
+let itemCount = 1;
+
 function displayBasketBox(basketImage, basketName, basketPrice) {
+
   const orderBox = document.querySelector(".orders-box");
   const newItem = document.createElement("div");
   newItem.classList.add("basket-content");
-
   newItem.innerHTML = `
     <div class="img-part">
       <img src="${basketImage}" alt="Pizza Photo" class="basket-img">
@@ -103,11 +105,19 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
     </div>
     <span><i class="fa-solid fa-trash"></i></span>
   `;
-
-  let itemCount = 1;
+  const basketItems = orderBox.querySelectorAll(".basket-content");
+  for (let item of basketItems) {
+    const name = item.querySelector(".basket-name").textContent;
+    if (name === basketName) {
+      let countSpan = item.querySelector(".changer");
+      countSpan.textContent = parseInt(countSpan.textContent) + 1;
+      itemCount = countSpan.textContent;
+      return;
+    }
+  }
   const deleteItem = newItem.querySelector(".fa-trash");
   deleteItem.addEventListener("click", () => {
-    deleteBasketBox(newItem, basketPrice,itemCount);
+    deleteBasketBox(newItem, basketPrice, itemCount);
   });
 
   const plusEdit = newItem.querySelector(".plus");
@@ -143,12 +153,12 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
   orderBox.scrollTop = orderBox.scrollHeight;
 }
 
-function deleteBasketBox(itemElement, price,itemCount) {
+function deleteBasketBox(itemElement, price, itemCount) {
   itemElement.remove();
-  counter-=itemCount;
+  counter -= itemCount;
 
   let numeric = parseFloat(price.replace("AZN", "").replace(",", "."));
-  totalBasket -= numeric*itemCount;
+  totalBasket -= numeric * itemCount;
 
   if (totalBasket < 0) totalBasket = 0;
   if (counter < 0) counter = 0;
