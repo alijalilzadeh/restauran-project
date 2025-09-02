@@ -161,6 +161,7 @@ function displayBasketBox(basketImage, basketName, basketPrice) {
 }
 
 function deleteBasketBox(itemElement, price, itemCount) {
+
   itemElement.remove();
   counter -= itemCount;
 
@@ -168,7 +169,7 @@ function deleteBasketBox(itemElement, price, itemCount) {
 
   if (totalBasket < 0) totalBasket = 0;
   if (counter < 0) counter = 0;
-
+  
   editTotal();
 }
 
@@ -179,7 +180,7 @@ function editTotal() {
 
   const basketSubTotal = document.querySelector(".subtotal-price");
   const basketTotal = document.querySelector(".total-price");
-  const aznCur = "AZN"; 
+  const aznCur = document.querySelector(".food-price span").textContent; 
 
   basketPart.innerText = totalBasket.toFixed(2) + " " + aznCur;
   basketSubTotal.innerText = totalBasket.toFixed(2) + " " + aznCur;
