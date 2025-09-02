@@ -188,6 +188,10 @@ body {
   transition: all .45s;
   font-size: 16px !important;
 }
+.navbar-links li a:active {
+  color: #fff;
+  background-color: #124170;
+}
 
 .navbar-links li a:hover {
   color: #fff;
@@ -313,7 +317,7 @@ section {
   font-size: 22px;
   cursor: pointer;
   transition: all 0.4s ease;
-  z-index: 500;
+  z-index: 200;
   text-decoration: none;
 }
 
@@ -364,10 +368,11 @@ section {
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 600;
+  z-index: 300;
 }
 
 /* Basket Total  */
+
 
 .card-box {
   background-color: rgba(22, 24, 39, .7);
@@ -467,7 +472,7 @@ section {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 700;
+  z-index: 400;
 }
 
 .basket-box {
