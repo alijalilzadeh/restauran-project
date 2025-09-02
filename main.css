@@ -446,6 +446,8 @@ section {
 
 .basket-sidebar.opened {
   display: block;
+  transform: translateX(0);
+  transition: all .6s;
   position: fixed;
   top: 0;
   right: 0;
@@ -453,12 +455,13 @@ section {
 }
 
 .basket-sidebar.closed {
-  display: none;
+  transform: translateX(100%);
 }
 
 .basket-sidebar {
-  display: none;
+  transform: translateX(100%);
   height: 100vh;
+  transition: all .6s;
   width: 40%;
   position: fixed;
   top: 0;
@@ -729,6 +732,14 @@ section {
   font-size: 17px;
 }
 
+.basket-sidebar {
+  width: 50%;
+}
+
+.subtotal-content,
+.total-content {
+  padding: .8rem 1.2rem !important;
+}
 
 @media (max-width: 576px) {
   .orders-box {
